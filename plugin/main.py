@@ -14,7 +14,7 @@ class EpicGamesStoreLauncher(Flox):
             games = egs.get_games()
             for game in games:
                 score = match(query, game.display_name)
-                if score > 10 or query == '':
+                if (score > 10 or query == '') and not game.b_is_incomplete_install:
                     self.add_item(
                         title=game.display_name, 
                         subtitle=str(game.full_exe_path()),
