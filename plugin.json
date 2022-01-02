@@ -1,0 +1,12 @@
+{
+    "ID": "02D91372A4C9429B93BA6365E38FBD4C",
+    "ActionKeyword": "eg",
+    "Name": "Epic Games Store Launcher",
+    "Description": "Launch your Epic Game Store games",
+    "Author": "Garulf",
+    "Version": "0.0.1",
+    "Language": "python",
+    "Website": "https://github.com/Garulf/epic_games_store_launcher",
+    "IcoPath": "./icon.png",
+    "ExecuteFileName": "run.py"
+}
