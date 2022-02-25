@@ -1,0 +1,33 @@
+body:
+  - type: checkbox
+    attributes:
+      name: show_on_empty_query
+      label: 'Show All when query is empty:'
+      defaultValue: true
+  - type: dropdown
+    attributes:
+      name: score_threshold
+      label: 'Minimum score:'
+      defaultValue: 10
+      options:
+        - 0
+        - 5
+        - 10
+        - 15
+        - 20
+        - 25
+        - 30
+        - 35
+        - 40
+        - 45
+        - 50
+        - 55
+        - 60
+        - 65
+        - 70
+        - 75
+        - 80
+        - 85
+        - 90
+        - 95
+        - 100
