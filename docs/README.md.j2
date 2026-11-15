@@ -1,0 +1,72 @@
+{% extends "base.md.j2" %}
+
+{% block badges_extra %} [![Downloads](https://img.shields.io/github/downloads/{{ project.owner }}/{{ project.repo }}/total)]({{ project.url }}/releases/latest){% endblock %}
+
+{% block usage %}
+## Features
+
+* **Search, pick, play.** Select a game and the Epic Games Launcher starts it.
+* **Fully local.** Reads the launcher's install manifests from disk. No account, no web requests.
+* **Only installed games.** Half finished downloads and installs stay out of the list.
+* **Quiet results.** Games that barely match your query are left out. Tune it with a minimum score.
+
+## Usage
+
+Type `eg` followed by a game name, then press `Enter` to launch it:
+
+```
+eg alan
+```
+
+{{ screenshot("search", alt="Epic Games Store Launcher search results in Flow Launcher") }}
+
+Type `eg` on its own to list every installed game:
+
+{{ screenshot("library", alt="Every installed Epic Games Store game listed in Flow Launcher") }}
+
+## Installation
+
+### Flow Launcher
+
+In Flow Launcher, type:
+
+```
+pm install Epic Games Store Launcher
+```
+
+{{ screenshot("install", alt="Flow Launcher plugin manager installing Epic Games Store Launcher") }}
+
+### Manual installation
+
+Download `Epic-Games-Store-Launcher-<version>.zip` from the [latest release]({{ project.url }}/releases/latest) and unzip it into
+`%appdata%\FlowLauncher\Plugins`, then restart Flow Launcher.
+
+Pre-releases of the next version are published from the open release PR on the
+[releases page]({{ project.url }}/releases) for testing. Flow Launcher won't offer them as updates.
+
+## Configuration
+
+Open **Settings → Plugins → Epic Games Store Launcher** in Flow Launcher:
+
+| Setting | Default | Description |
+| --- | --- | --- |
+| Show All when query is empty | on | List every installed game when you type `eg` with nothing after it |
+| Minimum score | `10` | Hide games whose match score is at or below this. Raise it if unrelated games show up |
+
+## Requirements
+
+* Windows with the Epic Games Launcher installed
+* Flow Launcher 1.17.0 or newer
+* Python 3.8 or newer, which Flow Launcher can install for you
+
+## Changelog
+
+{{ changelog(3) }}
+
+See [CHANGELOG.md](CHANGELOG.md) for the full history.
+{% endblock %}
+
+{% block screenshots %}{% endblock %}
+{% block install %}{% endblock %}
+{% block contributing %}{% endblock %}
+{% block license %}{% endblock %}
