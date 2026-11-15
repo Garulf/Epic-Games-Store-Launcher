@@ -13,6 +13,15 @@ def test_reads_every_manifest_below_the_directory(tmp_path):
     assert [game.display_name for game in egs.get_games(tmp_path)] == ["Hades", "Celeste"]
 
 
+def test_skips_manifests_it_cannot_read(tmp_path):
+    (tmp_path / "a.item").write_text(json.dumps(manifest("Hades", "Hades")), encoding="utf-8")
+    (tmp_path / "b.item").write_text('{"DisplayName": "Half written', encoding="utf-8")
+    (tmp_path / "c.item").write_text(json.dumps({"DisplayName": "No install data"}), encoding="utf-8")
+    (tmp_path / "d.item").write_text("[]", encoding="utf-8")
+
+    assert [game.display_name for game in egs.get_games(tmp_path)] == ["Hades"]
+
+
 def test_reads_utf8_names(tmp_path):
     (tmp_path / "a.item").write_bytes(json.dumps(manifest("Ōkami HD", "Okami"), ensure_ascii=False).encode("utf-8"))
 

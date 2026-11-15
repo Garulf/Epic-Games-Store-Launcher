@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass
 from pathlib import Path, PureWindowsPath
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 EOS_KEY = r"SOFTWARE\Epic Games\EOS"
 MANIFESTS_VALUE = "ModSdkMetadataDir"
@@ -52,5 +52,13 @@ class Game:
         return launch_uri(self.catalog_namespace, self.catalog_item_id, self.app_name)
 
 
+def read_manifest(path: Path) -> Optional[Game]:
+    try:
+        return Game.from_manifest(json.loads(path.read_bytes()))
+    except (OSError, ValueError, KeyError, TypeError, AttributeError):
+        return None
+
+
 def get_games(directory: Path) -> List[Game]:
-    return [Game.from_manifest(json.loads(path.read_bytes())) for path in sorted(directory.glob("**/*.item"))]
+    games = (read_manifest(path) for path in sorted(directory.glob("**/*.item")))
+    return [game for game in games if game is not None]
