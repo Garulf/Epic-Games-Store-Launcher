@@ -55,3 +55,24 @@ def test_query_is_registered_as_a_plugin_method(manifests, settings):
     response = asyncio.run(search.plugin._event_handler.trigger_event("query", "hades"))
 
     assert "Hades" in [result["Title"] for result in response["Result"]]
+
+
+def test_unrelated_games_are_hidden(manifests, settings):
+    assert titles(search.query("just caus")) == ["Just Cause 4"]
+
+
+def test_score_threshold_setting_hides_weak_matches(manifests, settings):
+    weak = max(result.score for result in search.query("tr"))
+    settings["score_threshold"] = str(weak)
+
+    assert titles(search.query("tr")) == []
+
+
+def test_default_threshold_keeps_good_matches(manifests, settings):
+    assert titles(search.query("hades")) == ["Hades"]
+
+
+def test_empty_query_can_show_nothing(manifests, settings):
+    settings["show_on_empty_query"] = False
+
+    assert titles(search.query("")) == []
