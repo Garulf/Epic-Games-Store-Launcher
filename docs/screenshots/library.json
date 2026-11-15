@@ -1,0 +1,59 @@
+{
+  "keyword": "eg",
+  "query": "",
+  "icon": "../../data/icon.png",
+  "max_results": 5,
+  "selection": 0,
+  "results": [
+    {
+      "title": "Alan Wake 2",
+      "subtitle": "C:\\Program Files\\Epic Games\\AlanWake2\\AlanWake2.exe",
+      "tile": {
+        "text": "AW",
+        "color": "#B3261E"
+      }
+    },
+    {
+      "title": "Alan Wake Remastered",
+      "subtitle": "C:\\Program Files\\Epic Games\\AlanWakeRemastered\\AlanWakeRemastered.exe",
+      "tile": {
+        "text": "AW",
+        "color": "#3A5A8C"
+      }
+    },
+    {
+      "title": "Celeste",
+      "subtitle": "C:\\Program Files\\Epic Games\\Celeste\\Celeste.exe",
+      "tile": {
+        "text": "C",
+        "color": "#B83280"
+      }
+    },
+    {
+      "title": "Fortnite",
+      "subtitle": "C:\\Program Files\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteLauncher.exe",
+      "tile": {
+        "text": "FN",
+        "color": "#7B3FE4"
+      }
+    },
+    {
+      "title": "Hades",
+      "subtitle": "C:\\Program Files\\Epic Games\\Hades\\Hades.exe",
+      "tile": {
+        "text": "H",
+        "color": "#C2410C"
+      }
+    },
+    {
+      "title": "Rocket League",
+      "subtitle": "C:\\Program Files\\Epic Games\\rocketleague\\Binaries\\Win64\\RocketLeague.exe",
+      "tile": {
+        "text": "RL",
+        "color": "#1D6FD8"
+      }
+    }
+  ],
+  "query_suggestion": "",
+  "show_caret": false
+}

@@ -1,0 +1,27 @@
+{
+  "keyword": "eg",
+  "query": "alan",
+  "icon": "../../data/icon.png",
+  "max_results": 3,
+  "selection": 0,
+  "results": [
+    {
+      "title": "Alan Wake 2",
+      "subtitle": "C:\\Program Files\\Epic Games\\AlanWake2\\AlanWake2.exe",
+      "tile": {
+        "text": "AW",
+        "color": "#B3261E"
+      }
+    },
+    {
+      "title": "Alan Wake Remastered",
+      "subtitle": "C:\\Program Files\\Epic Games\\AlanWakeRemastered\\AlanWakeRemastered.exe",
+      "tile": {
+        "text": "AW",
+        "color": "#3A5A8C"
+      }
+    }
+  ],
+  "query_suggestion": "",
+  "show_caret": true
+}
