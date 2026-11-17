@@ -5,8 +5,8 @@
   "Description": "Launch your Epic Game Store games",
   "Author": "Garulf",
   "Version": "2.0.0",
-  "Language": "python",
-  "Website": "https://github.com/Garulf/epic_games_store_launcher",
-  "IcoPath": "./icon.png",
+  "Language": "python_v2",
+  "Website": "https://github.com/Garulf/Epic-Games-Store-Launcher",
+  "IcoPath": "icon.png",
   "ExecuteFileName": "run.py"
 }
